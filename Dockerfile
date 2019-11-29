@@ -1,24 +1,18 @@
-#Install the container's OS.
-FROM ubuntu:latest as HUGOINSTALL
+FROM ubuntu:latest as STAGEONE
 
-# Install Hugo.
+# install hugo
+ENV HUGO_VERSION=0.60
+ADD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz /tmp/
+RUN tar -xf /tmp/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -C /usr/local/bin/
+
+# install syntax highlighting
 RUN apt-get update
-RUN apt-get install hugo
+RUN apt-get install -y python3-pygments
 
-# Copy the contents of the current working directory to the hugo-site
-# directory. The directory will be created if it doesn't exist.
-COPY . /hugo-site
+# build site
+COPY source /source
+RUN hugo --source=/source/ --destination=/public/
 
-# Use Hugo to build the static site files.
-RUN hugo -v --source=/hugo-site --destination=/hugo-site/public
-
-# Install NGINX and deactivate NGINX's default index.html file.
-# Move the static site files to NGINX's html directory.
-# This directory is where the static site files will be served from by NGINX.
 FROM nginx:stable-alpine
-RUN mv /usr/share/nginx/html/index.html /usr/share/nginx/html/old-index.html
-COPY --from=HUGOINSTALL /hugo-site/public/ /usr/share/nginx/html/
-
-# The container will listen on port 80 using the TCP protocol.
+COPY --from=STAGEONE /public/ /usr/share/nginx/html/
 EXPOSE 80
-    
