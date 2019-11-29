@@ -14,5 +14,5 @@ COPY source /source
 RUN hugo --source=/source/ --destination=/public/
 
 FROM nginx:stable-alpine
-COPY --from=STAGEONE /public/ /usr/share/nginx/html/
+#COPY --from=STAGEONE /public/ /usr/share/nginx/html/
 EXPOSE 80
