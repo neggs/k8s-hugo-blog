@@ -1,7 +1,7 @@
 FROM ubuntu:latest as STAGEONE
 
 # install hugo
-ENV HUGO_VERSION=0.60
+ENV HUGO_VERSION=0.60.0
 ADD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz /tmp/
 RUN tar -xf /tmp/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -C /usr/local/bin/
 
