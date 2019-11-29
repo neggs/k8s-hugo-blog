@@ -1,4 +1,4 @@
-FROM alpine:3.4 as HUGOINSTALL
+FROM alpine:3.4
 MAINTAINER neggs
 
 RUN apk add --update \
