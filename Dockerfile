@@ -7,7 +7,7 @@ RUN apt-get -qq update \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Download and install hugo
-ENV HUGO_VERSION 0.22.1
+ENV HUGO_VERSION 0.60.0
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.deb
 
 
@@ -20,7 +20,7 @@ RUN mkdir /usr/share/blog
 WORKDIR /usr/share/blog
 
 # Expose default hugo port
-EXPOSE 1313
+EXPOSE 80
 
 # Automatically build site
 ONBUILD ADD site/ /usr/share/blog
