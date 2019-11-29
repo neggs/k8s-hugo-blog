@@ -1,5 +1,5 @@
-FROM alpine:3.4
-MAINTAINER d@practicalmagic.co.za
+FROM alpine:3.4 as HUGOINSTALL
+MAINTAINER neggs
 
 RUN apk add --update \
     git \
@@ -8,7 +8,7 @@ RUN apk add --update \
   && pip install pygments \
   && rm -rf /var/cache/apk/*
 
-ENV HUGO_VERSION 0.17
+ENV HUGO_VERSION 0.60.0
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_linux_amd64
 ENV HUGO_RESOURCE hugo_${HUGO_VERSION}_Linux-64bit
 
