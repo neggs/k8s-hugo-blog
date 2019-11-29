@@ -1,22 +1,22 @@
-baseurl = "http://blog.publysher.nl/"
-languageCode = "en-us"
-title = "Publysher Development Blog"
-disqusShortname = "publysher-blog"
+baseurl = "http://blog.n3g.gs/"
+languageCode = "en-uk"
+title = "neg.gs Development Blog"
+disqusShortname = "neg.gs-blog"
 theme = "hyde-x"
 
 PygmentsStyle = "tango"
 
 [author]
-	name = "Publysher"
+	name = "neg.gs"
 
 [params]
-	github = "https://github.com/publysher"
-	linkedin = "https://www.linkedin.com/in/yduppen"
+	github = "https://github.com/neggs"
+	linkedin = "#"
 
 	theme = "theme-base-08"
 
 	tagline = "Development"
 
-	googleAuthorship = "111509161421737611843"
-	googleAnalytics = "UA-24629686-1"
+	googleAuthorship = "#"
+	googleAnalytics = "#"
 
