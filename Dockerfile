@@ -1,5 +1,5 @@
-FROM debian:jessie
-MAINTAINER yigal@publysher.nl
+FROM debian:jessie:linux-arm64
+MAINTAINER neggs
 
 # Install pygments (for syntax highlighting) 
 RUN apt-get -qq update \
