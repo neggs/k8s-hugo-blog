@@ -2,7 +2,7 @@ baseurl = "http://blog.n3g.gs/"
 languageCode = "en-uk"
 title = "neg.gs Development Blog"
 disqusShortname = "neg.gs-blog"
-theme = "hyde-x"
+theme = "hello-friend-ng"
 
 PygmentsStyle = "tango"
 
@@ -13,7 +13,7 @@ PygmentsStyle = "tango"
 	github = "https://github.com/neggs"
 	linkedin = "#"
 
-	theme = "theme-base-08"
+	theme = "hello-friend-ng"
 
 	tagline = "Development"
 
