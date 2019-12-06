@@ -1,5 +1,8 @@
-FROM debian:jessie
+FROM hypriot/rpi-alpine-scratch
 MAINTAINER neggs
+LABEL version="alpine linux version: 3.2\r\nhugo version: 0.60.0"
+
+#RUN echo "http://nl.alpinelinux.org/alpine/v3.1/main" > /etc/apk/repositories
 
 # Install pygments (for syntax highlighting) 
 RUN apt-get -qq update \
